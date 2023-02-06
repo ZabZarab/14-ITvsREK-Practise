@@ -23,7 +23,11 @@ public class JustAClass {
      * @return
      */
     public int sumUpIt(int n){
-        return 0;
+        int output = 0;
+        for(int i = 0; i<= n; i++){
+            output += i;
+        }
+        return output;
     }
 
     /**
@@ -33,7 +37,11 @@ public class JustAClass {
      * @return
      */
     public int sumUpRek(int n){
-        return 0;
+        if(n!=0){
+            return n + sumUpRek(n-1);
+        }else{
+            return 0;
+        }
     }
 
     /**
@@ -43,7 +51,11 @@ public class JustAClass {
      * @return
      */
     public int sumUpRandomIt(int n){
-        return 0;
+        int output = 0;
+        for(int i = 0; i<= n; i++){
+            output += getRandom();
+        }
+        return output;
     }
 
     /**
@@ -53,6 +65,9 @@ public class JustAClass {
      * @return
      */
     public int sumUpRandomRek(int n){
+        if(n!=0){
+            return getRandom() + sumUpRandomRek(n-1);
+        }
         return 0;
     }
 
@@ -63,7 +78,13 @@ public class JustAClass {
      * @return die größte zufällig Zahl, die im Verlauf der Methode erstellt wurde.
      */
     public int biggestOfRandomIt(int n){
-        return -1;
+        int big = getRandom();
+        int small;
+        for(int i = 0; i< n; i++){
+            small = getRandom();
+            if(big < small) big = small;
+        }
+        return big;
     }
 
     /**
